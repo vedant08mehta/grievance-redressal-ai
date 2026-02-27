@@ -1,34 +1,69 @@
-# AI-Based Student Grievance Redressal System
+# Student Grievance Redressal System
 
-This project uses Machine Learning and NLP to automatically classify student grievances into relevant departments.
+A web app that lets students submit complaints and track their resolution status. Complaints are automatically classified into departments using a machine learning model.
+
+---
 
 ## Features
-- Complaint classification using TF-IDF and Logistic Regression
-- Web interface using Streamlit
-- 86% classification accuracy
-- User-friendly interface
 
-## Tech Stack
-- Python
-- Pandas
-- Scikit-learn
-- Streamlit
+- Submit complaints with your name and room number
+- Auto-classification of complaints into departments using ML
+- Track complaint status using a unique complaint ID
+- Rate your experience once a complaint is resolved
+- Admin panel to manage and update complaint statuses
+- Stats dashboard showing total, resolved, pending, and in-progress complaints
 
-## How to Run
+---
+
+## Project Structure
+
+```
+Grievance/
+├── .streamlit/
+│   └── config.toml       # App theme
+├── app.py                # Main Streamlit app
+├── training.py           # Model training script
+├── grievances.csv        # Training data
+├── complaints.csv        # Submitted complaints (auto-created)
+└── model.pkl             # Trained ML model (auto-created)
+```
+
+---
+
+## Setup
 
 1. Install dependencies:
-   pip install pandas scikit-learn streamlit
+   ```
+   pip install streamlit pandas scikit-learn
+   ```
 
 2. Train the model:
-   python train.py
+   ```
+   python training.py
+   ```
 
 3. Run the app:
+   ```
    streamlit run app.py
+   ```
 
-## Future Scope
-- Mobile app integration
-- Chatbot system
-- Deep learning models
+---
 
-## Author
-Vedant Mehta
+## Departments
+
+Complaints are classified into one of five departments: Maintenance, Accounts, Academics, Examination, and Library.
+
+---
+
+## Tech Stack
+
+- Python
+- Streamlit
+- Scikit-learn (Logistic Regression + TF-IDF)
+- Pandas
+
+---
+
+## Admin Access
+
+Go to the **Admin** tab and enter the password to manage complaints. Default password: `admin123`
